@@ -85,3 +85,116 @@ Créez une classe `Equipe` qui représente une équipe de football.
    - Affichant l'équipe et ses informations
    - Testant la suppression d'un joueur
    - Affichant le nombre de joueurs par position
+
+   ## 📋 Exercice 3 : La classe Match
+
+### Énoncé
+
+Créez une classe `Match` pour représenter un match de football.
+
+**Propriétés requises :**
+- Un identifiant unique du match
+- L'équipe à domicile (objet `Equipe`)
+- L'équipe en déplacement (objet `Equipe`)
+- La date du match (au format texte, par exemple "2024-03-15")
+- Le lieu du match (stade)
+- Les buts marqués par l'équipe à domicile
+- Les buts marqués par l'équipe en déplacement
+- Le statut du match ("À venir", "En cours", "Terminé")
+
+**Constructeur :**
+- Initialise tous les paramètres
+- Le score commence à 0-0
+- Le statut par défaut est "À venir"
+- Paramètres : identifiant, équipe domicile, équipe déplacement, date, lieu
+
+**Méthodes requises :**
+- Une méthode pour mettre à jour le score (prend en paramètre l'équipe qui a marqué)
+- Une méthode pour changer le statut du match
+- Une méthode pour retourner le résultat du match (par exemple : "Lyon 3 - 2 Monaco")
+- Une méthode pour déterminer l'équipe gagnante (ou "Match nul" s'il y a égalité)
+- Une méthode pour afficher les informations du match de manière formatée
+- Une méthode pour calculer le nombre total de buts du match
+
+**Règles de visibilité :**
+- Les propriétés doivent être `private`
+- Les méthodes doivent être `public`
+
+### Travail à faire
+
+1. Créez le fichier `Match.php`
+2. Importez les classes `Equipe` et `Joueur`
+3. Déclarez la classe et ses propriétés
+4. Écrivez le constructeur
+5. Implémentez toutes les méthodes requises
+6. Testez votre classe en :
+   - Créant deux équipes avec plusieurs joueurs chacune
+   - Créant une instance de match
+   - Simulant l'ajout de buts au match
+   - Affichant le résultat final
+   - Affichant l'équipe gagnante
+
+## 🎯 Exercice 4 : Mise en pratique complète
+
+### Travail à faire
+
+Créez un fichier `index.php` qui servira de point d'entrée à votre application. Ce fichier doit :
+
+1. Importer les trois classes (`Joueur`, `Equipe`, `Match`)
+2. Créer deux équipes de football complètes :
+   - Équipe 1 : 5 joueurs minimum, avec différentes positions
+   - Équipe 2 : 5 joueurs minimum, avec différentes positions
+3. Créer un match entre ces deux équipes
+4. Simuler le match :
+   - Ajouter plusieurs buts au fur et à mesure
+   - Changer le statut du match
+   - Afficher les informations du match après chaque but
+5. Afficher le résumé final du match avec :
+   - Le score final
+   - L'équipe gagnante
+   - Les informations des deux équipes
+   - La liste des joueurs de chaque équipe
+
+---
+
+## Concepts à comprendre pour le pattern MVC
+
+En complétant cet exercice, vous avez manipulé :
+
+- **Model (Modèle)** : Vos classes `Joueur`, `Equipe` et `Match` représentent les données métier
+- **Logique métier** : Les méthodes de ces classes contiennent la logique de votre application
+- **Séparation des responsabilités** : Chaque classe a une responsabilité claire
+
+Pour aller vers le **pattern MVC**, vous allez bientôt ajouter :
+
+- **Vue (View)** : Un fichier HTML/CSS pour afficher les données
+- **Contrôleur (Controller)** : Un fichier PHP qui gère les interactions entre les modèles et les vues
+- **Routeur** : Un mécanisme pour diriger les requêtes vers les bonnes actions
+
+---
+
+## Points importants à retenir
+
+| Concept | Définition | Exemple |
+|---------|-----------|---------|
+| **Classe** | Un moule pour créer des objets | `class Joueur { }` |
+| **Propriété** | Une variable au sein d'une classe | `private $nom;` |
+| **Constructeur** | Méthode appelée lors de la création d'un objet | `public function __construct($nom)` |
+| **Méthode** | Une fonction au sein d'une classe | `public function getNom()` |
+| **Visibilité** | Définit qui peut accéder (public, private, protected) | `private $nom;` |
+| **Objet** | Une instance d'une classe | `$joueur = new Joueur(...);` |
+| **Getter** | Méthode pour lire une propriété privée | `public function getNom() { return $this->nom; }` |
+
+---
+
+## Astuces de développement
+
+- Utilisez `$this` pour accéder aux propriétés et méthodes de la classe courante
+- N'oubliez pas `new` pour créer une instance
+- Utilisez `require_once` pour importer vos classes (et éviter les doublons)
+- Testez progressivement : écrivez une classe, testez-la, puis passez à la suivante
+- Commentez votre code pour expliquer vos choix
+- Utilisez des noms de variables et méthodes explicites
+
+---
+
